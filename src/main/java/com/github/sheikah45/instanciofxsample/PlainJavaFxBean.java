@@ -26,6 +26,9 @@ import javafx.collections.ObservableMap;
 import javafx.collections.ObservableSet;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class PlainJavaFxBean {
     private final StringProperty stringValue = new SimpleStringProperty();
@@ -134,8 +137,8 @@ public class PlainJavaFxBean {
         return mapValue;
     }
 
-    public void setMapValue(ObservableMap<String, String> mapValue) {
-        this.mapValue.set(mapValue);
+    public void setMapValue(Map<String, String> mapValue) {
+        this.mapValue.set(FXCollections.observableMap(mapValue));
     }
 
     public ObservableList<String> getListValue() {
@@ -146,8 +149,8 @@ public class PlainJavaFxBean {
         return listValue;
     }
 
-    public void setListValue(ObservableList<String> listValue) {
-        this.listValue.set(listValue);
+    public void setListValue(List<String> listValue) {
+        this.listValue.set(FXCollections.observableList(listValue));
     }
 
     public ObservableSet<String> getSetValue() {
@@ -158,8 +161,8 @@ public class PlainJavaFxBean {
         return setValue;
     }
 
-    public void setSetValue(ObservableSet<String> setValue) {
-        this.setValue.set(setValue);
+    public void setSetValue(Set<String> setValue) {
+        this.setValue.set(FXCollections.observableSet(setValue));
     }
 
     public ObservableMap<String, String> getMapObservable() {
